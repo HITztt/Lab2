@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>        
+<constant name="struts.devMode" value="true" />
+
+    <!-- 所有配置都要放在package元素中，而且包必须继承struts-default -->
+    <package name="default" namespace="/" extends="struts-default">
+        <!-- 通用action，*表示过滤所有请求 -->
+        
+        <action name="ShowAllBook" class="book.action.ShowAllBookAction">
+    		<result name="success">/WEB-INF/content/listBooks.jsp</result> 
+    		<result name="error">/WEB-INF/content/error.jsp</result>   		
+    	</action>
+        <action name="showInformation" class="book.action.ShowBookInformationAction">
+    		 <result name="success">/WEB-INF/content/ShowInformation.jsp</result> 
+    		 <result name="error">/WEB-INF/content/error.jsp</result>
+    	</action>
+        <action name="viewAllAuthors" class="author.action.ViewAllAuthorsAction">
+    		 <result name="success">/WEB-INF/content/listauthors.jsp</result> 
+    		 <result name="error">/WEB-INF/content/error.jsp</result>
+    	</action>
+    	<action name="SearchAuthor" class="author.action.SearchAuthorAction">
+    		 <result name="success">/WEB-INF/content/ShowSearchAuthor.jsp</result> 
+    		 <result name="error">/WEB-INF/content/error.jsp</result>
+    	</action>
+    	<action name="delBook" class="book.action.DelBookAction">
+    		<result type="chain">ShowAllBook</result>
+    		<result name="error">/WEB-INF/content/error.jsp</result>    		  
+    	</action>
+    	
+        
+        
+        <action name="*">
+            <result>/WEB-INF/content/{1}.jsp</result>
+            <!-- {1}表示第一个*所对应的内容。 
+            这句话的意思是浏览器访问网址若为/test，则返回/WEB-INF/content/test.jsp页面。
+            其中test可为任意字符串 -->
+        </action>
+    </package>
+
+</struts>

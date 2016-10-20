@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/content/choose.jsp=UTF-8
+encoding//WebContent/index.jsp=UTF-8
+encoding//src/book/action/DelBookAction.java=UTF-8
+encoding//src/book/action/ShowBookInformationAction.java=UTF-8
+encoding//src/database/Connect.java=UTF-8
