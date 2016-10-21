@@ -48,7 +48,6 @@ body
 		</s:iterator>
 		
 	</table>
-	<a href="viewAllAuthors">查看所有作者</a>
 	<a href="choose">返回</a>
 </body>
 </html>
